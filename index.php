@@ -1,6 +1,10 @@
 <?php
 
 $res = array();
+$firstnames = array();
+$lastnames = array();
+$fantasy_array = array();
+
 $continents_with_animals = array(
     'afrika' => array('Mammuthus columbi', 'Addax nasomaculatus', 'Amadina'),
     'amerika' => array('Coccyzus Vieillot', 'Alaskacephale', 'Ciconia maguari', 'Mustela nigripes'),
@@ -22,37 +26,32 @@ foreach ($continents_with_animals as $key => $value) {
 
                 //echo 'found space';
 
-
+                static $i = 0;
                 $res[] = explode(' ', $val);
+                $firstnames[] = $res[$i][0];
+                $lastnames[] = $res[$i][1];
+                $i++;
             }
         }
     }
 }
 
 
-//echo '<pre>';
-//var_dump($continents_with_animals);
-//echo '<br><br>';
 
+/*
+  for ($i = 0; $i < count($res); $i++) {
 
-for ($i = 0; $i < count($res); $i++) {
+  //echo $res[$i][1];
+  $firstnames[] = $res[$i][0];
+  $lastnames[] = $res[$i][1];
+  }
 
-    //echo $res[$i][1];
-    $firstnames[] = $res[$i][0];
-    $lastnames[] = $res[$i][1];
-}
+ */
 
-
-
-
-
-//echo '<pre> after shuffle<br>';
 
 shuffle($firstnames);
 shuffle($lastnames);
 
-//var_dump($firstnames);
-//var_dump($lastnames);
 
 
 
@@ -85,9 +84,6 @@ foreach ($continents_with_animals as $key => $value) {
 
 
     $val_to_string = implode($value);
-
-
-
 
 
 
