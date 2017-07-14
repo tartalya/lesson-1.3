@@ -1,5 +1,6 @@
 <?php
 
+$res = array();
 $continents_with_animals = array(
     'afrika' => array('Mammuthus columbi', 'Addax nasomaculatus', 'Amadina'),
     'amerika' => array('Coccyzus Vieillot', 'Alaskacephale', 'Ciconia maguari', 'Mustela nigripes'),
@@ -14,7 +15,7 @@ foreach ($continents_with_animals as $key => $value) {
     if (is_array($value)) {
 
         // foreach ($continents_with_animals[$key] as $val) { // Действительно зачем такие сложности
-            foreach ($value as $val) {
+        foreach ($value as $val) {
             //echo $val;
 
             if (strpos($val, ' ')) {
@@ -55,11 +56,11 @@ shuffle($lastnames);
 
 
 
-    for ($i = 0; $i < count($firstnames); $i++) {
+for ($i = 0; $i < count($firstnames); $i++) {
 
-        $fantasy_array[$i][0] = $firstnames[$i];
-        $fantasy_array[$i][1] = $lastnames[$i];
-    }
+    $fantasy_array[$i][0] = $firstnames[$i];
+    $fantasy_array[$i][1] = $lastnames[$i];
+}
 
 
 //echo '<pre>';
