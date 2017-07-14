@@ -29,8 +29,8 @@ foreach ($continents_with_animals as $key => $value) {
 }
 
 
-//echo '<pre> before shuffle<br>';
-//var_dump($res);
+//echo '<pre>';
+//var_dump($continents_with_animals);
 //echo '<br><br>';
 
 
@@ -67,12 +67,41 @@ if (count($firstnames) == count($lastnames)) {
 
 echo '<h1>Фантастические твари</h1>';
 foreach ($fantasy_array as $value) {
-    
-    echo $value[0] . ' ' .$value[1] . '<br>';
+
+    echo $value[0] . ' ' . $value[1] . '<br>';
 }
 
 
-echo '<h2>И где они обитают</h2>';
+echo '<h1>И где они обитают</h1>';
 
 
+
+
+foreach ($continents_with_animals as $key => $value) {
+
+
+    echo '<h2>' . $key . '</h2><br>';
+
+
+    $val_to_string = implode($value);
+
+
+
+
+
+
+    for ($i = 0; $i < count($firstnames); $i++) {
+
+        //echo $firstnames[$i];
+
+        if (strpos($val_to_string, $firstnames[$i]) !== false) { // про !== для strpos надо бы хорошенько запомнить !!! 
+            $tmp[] = $firstnames[$i] . ' ' . $lastnames[$i];
+        }
+    }
+
+
+
+    echo implode($tmp, ', ');
+    unset($tmp);
+}
 ?>
