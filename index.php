@@ -13,8 +13,8 @@ foreach ($continents_with_animals as $key => $value) {
 
     if (is_array($value)) {
 
-        foreach ($continents_with_animals[$key] as $val) {
-
+        // foreach ($continents_with_animals[$key] as $val) { // Действительно зачем такие сложности
+            foreach ($value as $val) {
             //echo $val;
 
             if (strpos($val, ' ')) {
