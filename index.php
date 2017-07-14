@@ -27,7 +27,7 @@ foreach ($continents_with_animals as $key => $value) {
                 //echo 'found space';
 
                 static $i = 0;
-                $res[] = explode(' ', $val);
+                $res[] = explode(' ', $val, 2);
                 $firstnames[] = $res[$i][0];
                 $lastnames[] = $res[$i][1];
                 $i++;
