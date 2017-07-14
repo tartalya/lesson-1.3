@@ -53,14 +53,14 @@ shuffle($lastnames);
 //var_dump($firstnames);
 //var_dump($lastnames);
 
-if (count($firstnames) == count($lastnames)) {
+
 
     for ($i = 0; $i < count($firstnames); $i++) {
 
         $fantasy_array[$i][0] = $firstnames[$i];
         $fantasy_array[$i][1] = $lastnames[$i];
     }
-}
+
 
 //echo '<pre>';
 //var_dump($fantasy_array);
