@@ -1,5 +1,6 @@
 <?php
 
+$tmp = array();
 $res = array();
 $firstnames = array();
 $lastnames = array();
@@ -36,21 +37,30 @@ shuffle($lastnames);
 
 
 
+/*
+  for ($i = 0; $i < count($firstnames); $i++) {
+
+  $fantasy_array[$i][0] = $firstnames[$i];
+  $fantasy_array[$i][1] = $lastnames[$i];
+  }
+ */
 
 for ($i = 0; $i < count($firstnames); $i++) {
 
-    $fantasy_array[$i][0] = $firstnames[$i];
-    $fantasy_array[$i][1] = $lastnames[$i];
+    $fantasy_array[] = $firstnames[$i] . ' ' . $lastnames[$i];
+    //$fantasy_array[$i][1] = $lastnames[$i];
 }
+
 
 
 //echo '<pre>';
 //var_dump($fantasy_array);
 
+
 echo '<h1>Фантастические твари</h1>';
 foreach ($fantasy_array as $value) {
 
-    echo $value[0] . ' ' . $value[1] . '<br>';
+    echo $value . '<br>';
 }
 
 
@@ -68,19 +78,36 @@ foreach ($continents_with_animals as $key => $value) {
     $val_to_string = implode(' ', $value);
 
 
+    foreach ($fantasy_array as $fantasy_value) {
 
-    for ($i = 0; $i < count($firstnames); $i++) {
+        list($ber) = explode(' ', $fantasy_value);
 
-        //echo $firstnames[$i];
+        if (strpos($val_to_string, $ber) !== false) {
 
-        if (strpos($val_to_string, $firstnames[$i]) !== false) { // про !== для strpos надо бы хорошенько запомнить !!! 
-            $tmp[] = $firstnames[$i] . ' ' . $lastnames[$i];
+            //echo $ber;
+
+            $tmp[] = $fantasy_value;
         }
     }
 
-
-
     echo implode($tmp, ', ');
     unset($tmp);
+
+
+    /*
+      for ($i = 0; $i < count($firstnames); $i++) {
+
+      //echo $firstnames[$i];
+
+      if (strpos($val_to_string, $firstnames[$i]) !== false) { // про !== для strpos надо бы хорошенько запомнить !!!
+      $tmp[] = $firstnames[$i] . ' ' . $lastnames[$i];
+      //echo implode($fantasy_array[$i], ', ');
+      }
+      }
+     */
+
+
+    //  echo implode($tmp, ', ');
+    // unset($tmp);
 }
 ?>
