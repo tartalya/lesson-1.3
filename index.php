@@ -24,29 +24,11 @@ foreach ($continents_with_animals as $key => $value) {
 
             if (strpos($val, ' ')) {
 
-                //echo 'found space';
-
-                static $i = 0;
-                $res[] = explode(' ', $val, 2);
-                $firstnames[] = $res[$i][0];
-                $lastnames[] = $res[$i][1];
-                $i++;
+                list($firstnames[], $lastnames[]) = explode(' ', $val);
             }
         }
     }
 }
-
-
-
-/*
-  for ($i = 0; $i < count($res); $i++) {
-
-  //echo $res[$i][1];
-  $firstnames[] = $res[$i][0];
-  $lastnames[] = $res[$i][1];
-  }
-
- */
 
 
 shuffle($firstnames);
