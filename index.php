@@ -83,7 +83,7 @@ foreach ($continents_with_animals as $key => $value) {
     echo '<h2>' . $key . '</h2><br>';
 
 
-    $val_to_string = implode($value);
+    $val_to_string = implode(' ', $value);
 
 
 
