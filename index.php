@@ -21,9 +21,9 @@ foreach ($continents_with_animals as $key => $value) {
 
         // foreach ($continents_with_animals[$key] as $val) { // Действительно зачем такие сложности
         foreach ($value as $val) {
-            //echo $val;
 
-            if (strpos($val, ' ')) {
+            //if (strpos($val, ' ')) { // old not right check 
+            if (substr_count($val, ' ') == 1) {
 
                 list($firstnames[], $lastnames[]) = explode(' ', $val);
             }
